@@ -30,7 +30,7 @@ public class MyController {
   // AUTHENTICATE
   //========================================================================
   @ResponseBody
-  @PostMapping("/Authenticate")
+  @RequestMapping("/Authenticate")
   public String authenticate(@RequestParam String username, @RequestParam String password) {
 
     //CREATE AUTHENTICATION OBJECT (with Entered Username & Password)
