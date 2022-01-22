@@ -16,12 +16,12 @@ public class MyController {
 
   @Autowired private AuthenticationManager authenticationManager;
 
-  //========================================================================
-  // MY LOGIN
-  //========================================================================
-  @RequestMapping("/MyLogin")
-  public String myLogin() {
-    return "MyLogin";
+  //===============================================================================
+  // CUSTOM LOGIN FORM
+  //===============================================================================
+  @RequestMapping("CustomLoginForm")
+  String customLoginForm() {
+    return "CustomLogin";
   }
 
   //========================================================================
@@ -50,8 +50,8 @@ public class MyController {
   //========================================================================
   @ResponseBody
   @Secured("ROLE_USER")
-  @RequestMapping("/Hello")
-  public String hello() {
+  @RequestMapping("Hello")
+  String hello() {
     return "Hello from Controller";
   }
 
