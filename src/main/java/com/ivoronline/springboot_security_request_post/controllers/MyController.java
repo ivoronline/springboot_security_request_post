@@ -14,7 +14,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MyController {
 
+  //PROPERTIES
   @Autowired private AuthenticationManager authenticationManager;
+
+  //===============================================================================
+  // CUSTOM LOGIN FORM
+  //===============================================================================
+  @ResponseBody
+  @RequestMapping("Endpoint")
+  String endpoint() {
+    return "Endpoint";
+  }
 
   //===============================================================================
   // CUSTOM LOGIN FORM
@@ -28,8 +38,8 @@ public class MyController {
   // AUTHENTICATE
   //========================================================================
   @ResponseBody
-  @RequestMapping("/Authenticate")
-  public String authenticate(@RequestParam String username, @RequestParam String password) {
+  @RequestMapping("Authenticate")
+  String authenticate(@RequestParam String username, @RequestParam String password) {
 
     //CREATE AUTHENTICATION OBJECT (with Entered Username & Password)
     Authentication authentication = new UsernamePasswordAuthenticationToken(username, password);
