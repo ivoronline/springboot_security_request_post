@@ -20,7 +20,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   //=================================================================
-  // AUTHENTICATION MANAGER BEAN
+  // AUTHENTICATION MANAGER BEAN (Needed for Authenticate Endpoint)
   //=================================================================
   @Bean
   @Override
