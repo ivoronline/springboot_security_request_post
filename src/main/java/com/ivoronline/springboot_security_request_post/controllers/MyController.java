@@ -14,22 +14,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MyController {
 
+  //PROPERTIES
   @Autowired private AuthenticationManager authenticationManager;
 
-  //========================================================================
-  // MY LOGIN
-  //========================================================================
-  @RequestMapping("/MyLogin")
-  public String myLogin() {
-    return "MyLogin";
+  //===============================================================================
+  // CUSTOM LOGIN FORM
+  //===============================================================================
+  @RequestMapping("CustomLoginEndpoint")
+  String customLoginForm() {
+    return "CustomLoginForm";
   }
 
   //========================================================================
   // AUTHENTICATE
   //========================================================================
   @ResponseBody
-  @RequestMapping("/Authenticate")
-  public String authenticate(@RequestParam String username, @RequestParam String password) {
+  @RequestMapping("Authenticate")
+  String authenticate(@RequestParam String username, @RequestParam String password) {
 
     //CREATE AUTHENTICATION OBJECT (with Entered Username & Password)
     Authentication authentication = new UsernamePasswordAuthenticationToken(username, password);
@@ -50,8 +51,8 @@ public class MyController {
   //========================================================================
   @ResponseBody
   @Secured("ROLE_USER")
-  @RequestMapping("/Hello")
-  public String hello() {
+  @RequestMapping("Hello")
+  String hello() {
     return "Hello from Controller";
   }
 
